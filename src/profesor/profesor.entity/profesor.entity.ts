@@ -15,6 +15,9 @@ export class ProfesorEntity {
     @Column()
     grupoInvestigacion: string
 
+    @Column()
+    numeroDeExtensión: number
+
 
     @OneToMany(() => PropuestaEntity, propuesta => propuesta.profesor)
     propuestas: PropuestaEntity[];
