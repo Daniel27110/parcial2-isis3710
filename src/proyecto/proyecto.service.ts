@@ -17,7 +17,7 @@ export class ProyectoService {
 
 
         if (proy.fechaFin <= proy.fechaInicio) {
-            throw new BusinessLogicException("The project ending date must go after the beggining date", BusinessError.PRECONDITION_FAILED)
+            throw new BusinessLogicException("The project ending date must go after the project beggining date", BusinessError.PRECONDITION_FAILED)
         }
 
         return await this.proyRepository.save(proy);

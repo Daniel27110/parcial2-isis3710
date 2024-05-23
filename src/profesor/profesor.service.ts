@@ -13,7 +13,7 @@ export class profuestaService {
 
 
     async findProfesorById(id: Long): Promise<ProfesorEntity> {
-        const prof: ProfesorEntity = await this.profRepository.findOne({ where: { id }, relations: ['clubs'] });
+        const prof: ProfesorEntity = await this.profRepository.findOne({ where: { id }, relations: ['propuestas'] });
         if (!prof) {
             throw new BusinessLogicException("The profosal with the given id was not found", BusinessError.NOT_FOUND);
         }
