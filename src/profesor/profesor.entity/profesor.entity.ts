@@ -16,7 +16,6 @@ export class ProfesorEntity {
     grupoInvestigacion: string
 
 
-
     @OneToMany(() => PropuestaEntity, propuesta => propuesta.profesor)
     propuestas: PropuestaEntity[];
 }

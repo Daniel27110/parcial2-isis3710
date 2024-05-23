@@ -1,4 +1,4 @@
-import { Column, Entity, Long, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, Long, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { ProfesorEntity } from 'src/profesor/profesor.entity/profesor.entity';
 import { ProyectoEntity } from 'src/proyecto/proyecto.entity/proyecto.entity';
 
@@ -22,5 +22,6 @@ export class PropuestaEntity {
     profesor: ProfesorEntity
 
     @OneToOne(() => ProyectoEntity, proyecto => proyecto.propuesta)
+    @JoinColumn()
     proyecto: ProyectoEntity
 }
