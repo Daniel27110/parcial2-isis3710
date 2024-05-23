@@ -19,7 +19,7 @@ bootstrap();
 
 // TLDR CLI COMMANDS FOR NESTJS
 
-// 1. Crear un nuevo mod¿dulo
+// 1. Crear un nuevo moduslo
 
 // nest g module NAME
 
