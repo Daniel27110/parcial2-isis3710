@@ -5,7 +5,7 @@ import { ProfesorEntity } from './profesor.entity/profesor.entity';
 import { BusinessError, BusinessLogicException } from '../shared/errors/business-errors';
 
 @Injectable()
-export class profuestaService {
+export class ProfesorService {
     constructor(
         @InjectRepository(ProfesorEntity)
         private profRepository: Repository<ProfesorEntity>
