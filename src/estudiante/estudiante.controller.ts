@@ -4,7 +4,6 @@ import { EstudianteService } from './estudiante.service';
 import { EstudianteEntity } from './estudiante.entity/estudiante.entity';
 import { plainToInstance } from 'class-transformer';
 import { EstudianteDto } from './estudiante.dto/estudiante.dto';
-import { Long } from 'typeorm';
 
 @Controller('estudiantes')
 @UseInterceptors(BusinessErrorsInterceptor)
@@ -18,7 +17,7 @@ export class EstudianteController {
     }
 
     @Get(':id')
-    async findEstudianteById(@Param('id') id: Long) {
+    async findEstudianteById(@Param('id') id: number) {
         return this.estudianteService.findEstudianteById(id);
     }
 }

@@ -12,8 +12,8 @@ export class EstudianteService {
     ) { }
 
 
-    async findEstudianteById(id: Long): Promise<EstudianteEntity> {
-        const usuario: EstudianteEntity = await this.usuarioRepository.findOne({ where: { id }, relations: ["projecto"] });
+    async findEstudianteById(id: number): Promise<EstudianteEntity> {
+        const usuario: EstudianteEntity = await this.usuarioRepository.findOne({ where: { id }, relations: ["proyecto"] });
         if (!usuario)
             throw new BusinessLogicException("The student with the given id was not found", BusinessError.NOT_FOUND);
 

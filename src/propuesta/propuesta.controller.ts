@@ -4,7 +4,6 @@ import { PropuestaService } from './propuesta.service';
 import { plainToInstance } from 'class-transformer';
 import { PropuestaEntity } from './propuesta.entity/propuesta.entity';
 import { PropuestaDto } from './propuesta.dto/propuesta.dto';
-import { Long } from 'typeorm';
 
 @Controller('propuestas')
 @UseInterceptors(BusinessErrorsInterceptor)
@@ -18,7 +17,7 @@ export class PropuestaController {
     }
 
     @Get(':id')
-    async findPropuestaById(@Param('id') id: Long) {
+    async findPropuestaById(@Param('id') id: number) {
         return this.propuestaService.findPropuestaById(id);
     }
 
@@ -29,7 +28,7 @@ export class PropuestaController {
 
     @Delete(':id')
     @HttpCode(204)
-    async deletePropuesta(@Param('id') id: Long) {
+    async deletePropuesta(@Param('id') id: number) {
         return this.propuestaService.deletePropuesta(id);
     }
 }

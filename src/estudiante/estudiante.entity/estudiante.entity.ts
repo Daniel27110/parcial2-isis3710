@@ -1,11 +1,10 @@
-import { Column, Entity, JoinColumn, Long, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { ProyectoEntity } from 'src/proyecto/proyecto.entity/proyecto.entity';
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { ProyectoEntity } from '../../proyecto/proyecto.entity/proyecto.entity';
 
 @Entity()
 export class EstudianteEntity {
     @PrimaryGeneratedColumn()
-    id: Long
-
+    id: number
 
     @Column()
     nombre: string

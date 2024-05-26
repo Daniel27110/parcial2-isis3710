@@ -4,7 +4,6 @@ import { ProfesorService } from './profesor.service';
 import { ProfesorDto } from './profesor.dto/profesor.dto';
 import { ProfesorEntity } from './profesor.entity/profesor.entity';
 import { plainToInstance } from 'class-transformer';
-import { Long } from 'typeorm';
 
 @Controller('profesores')
 @UseInterceptors(BusinessErrorsInterceptor)
@@ -18,12 +17,12 @@ export class ProfesorController {
     }
 
     @Get(':id')
-    async findProfesorById(@Param('id') id: Long) {
+    async findProfesorById(@Param('id') id: number) {
         return this.profesorService.findProfesorById(id);
     }
 
     @Delete(':id')
-    async eliminarProfesorId(@Param('id') id: Long) {
+    async eliminarProfesorId(@Param('id') id: number) {
         return this.profesorService.eliminarProfesorPorId(id);
     }
 

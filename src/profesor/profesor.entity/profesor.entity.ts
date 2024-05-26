@@ -1,10 +1,10 @@
-import { PropuestaEntity } from 'src/propuesta/propuesta.entity/propuesta.entity';
-import { Column, Entity, Long, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { PropuestaEntity } from '../../propuesta/propuesta.entity/propuesta.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class ProfesorEntity {
     @PrimaryGeneratedColumn()
-    id: Long
+    id: number
 
     @Column()
     cedula: number

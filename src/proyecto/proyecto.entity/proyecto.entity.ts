@@ -1,11 +1,11 @@
-import { EstudianteEntity } from 'src/estudiante/estudiante.entity/estudiante.entity';
-import { PropuestaEntity } from 'src/propuesta/propuesta.entity/propuesta.entity';
-import { Column, Entity, JoinColumn, Long, OneToMany, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { EstudianteEntity } from '../../estudiante/estudiante.entity/estudiante.entity';
+import { PropuestaEntity } from '../../propuesta/propuesta.entity/propuesta.entity';
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class ProyectoEntity {
     @PrimaryGeneratedColumn()
-    id: Long
+    id: number
 
     @Column()
     fechaInicio: Date

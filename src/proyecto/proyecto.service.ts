@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { BusinessError, BusinessLogicException } from '../shared/errors/business-errors';
-import { Long, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 import { ProyectoEntity } from './proyecto.entity/proyecto.entity';
 
 @Injectable()

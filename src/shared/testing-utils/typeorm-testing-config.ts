@@ -1,9 +1,9 @@
 /* archivo src/shared/testing-utils/typeorm-testing-config.ts*/
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { EstudianteEntity } from 'src/estudiante/estudiante.entity/estudiante.entity';
-import { ProfesorEntity } from 'src/profesor/profesor.entity/profesor.entity';
-import { PropuestaEntity } from 'src/propuesta/propuesta.entity/propuesta.entity';
-import { ProyectoEntity } from 'src/proyecto/proyecto.entity/proyecto.entity';
+import { EstudianteEntity } from '../../estudiante/estudiante.entity/estudiante.entity';
+import { ProfesorEntity } from '../../profesor/profesor.entity/profesor.entity';
+import { PropuestaEntity } from '../../propuesta/propuesta.entity/propuesta.entity';
+import { ProyectoEntity } from '../../proyecto/proyecto.entity/proyecto.entity';
 
 
 export const TypeOrmTestingConfig = () => [

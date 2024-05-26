@@ -1,12 +1,11 @@
-import { Column, Entity, JoinColumn, Long, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { ProfesorEntity } from 'src/profesor/profesor.entity/profesor.entity';
-import { ProyectoEntity } from 'src/proyecto/proyecto.entity/proyecto.entity';
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { ProfesorEntity } from '../../profesor/profesor.entity/profesor.entity';
+import { ProyectoEntity } from '../../proyecto/proyecto.entity/proyecto.entity';
 
 @Entity()
 export class PropuestaEntity {
     @PrimaryGeneratedColumn()
-    id: Long
-
+    id: number
 
     @Column()
     titulo: string
@@ -18,7 +17,7 @@ export class PropuestaEntity {
     palabraClave: string
 
 
-    @ManyToOne(() => ProfesorEntity, profeseor => profeseor.propuestas)
+    @ManyToOne(() => ProfesorEntity, profesor => profesor.propuestas)
     profesor: ProfesorEntity
 
     @OneToOne(() => ProyectoEntity, proyecto => proyecto.propuesta)

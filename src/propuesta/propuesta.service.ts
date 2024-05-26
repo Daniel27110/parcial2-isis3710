@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Long, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 import { PropuestaEntity } from './propuesta.entity/propuesta.entity';
 import { BusinessError, BusinessLogicException } from '../shared/errors/business-errors';
 
@@ -12,11 +12,11 @@ export class PropuestaService {
     ) { }
 
     async findAllPropuesta(): Promise<PropuestaEntity[]> {
-        return await this.propRepository.find({ relations: ['profesor, proyecto'] });
+        return await this.propRepository.find({ relations: ["profesor", "proyecto"] });
     }
 
-    async findPropuestaById(id: Long): Promise<PropuestaEntity> {
-        const prop: PropuestaEntity = await this.propRepository.findOne({ where: { id }, relations: ['profesor, proyecto'] });
+    async findPropuestaById(id: number): Promise<PropuestaEntity> {
+        const prop: PropuestaEntity = await this.propRepository.findOne({ where: { id }, relations: ["profesor", "proyecto"] });
         if (!prop) {
             throw new BusinessLogicException("The proposal with the given id was not found", BusinessError.NOT_FOUND);
         }
@@ -33,7 +33,7 @@ export class PropuestaService {
     }
 
 
-    async deletePropuesta(id: Long) {
+    async deletePropuesta(id: number) {
         const prop: PropuestaEntity = await this.propRepository.findOne({ where: { id } });
         if (!prop) {
             throw new BusinessLogicException("The proposal with the given id was not found", BusinessError.NOT_FOUND);
