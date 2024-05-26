@@ -15,7 +15,7 @@ export class ProfesorService {
     async findProfesorById(id: Long): Promise<ProfesorEntity> {
         const prof: ProfesorEntity = await this.profRepository.findOne({ where: { id }, relations: ['propuestas'] });
         if (!prof) {
-            throw new BusinessLogicException("The profosal with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The profesor with the given id was not found", BusinessError.NOT_FOUND);
         }
         return prof;
     }
@@ -35,7 +35,7 @@ export class ProfesorService {
     async eliminarProfesorPorId(id: Long) {
         const prof: ProfesorEntity = await this.profRepository.findOne({ where: { id } });
         if (!prof) {
-            throw new BusinessLogicException("The profosal with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The profesor with the given id was not found", BusinessError.NOT_FOUND);
         }
 
 
@@ -51,7 +51,7 @@ export class ProfesorService {
     async eliminarProfesorPorCedula(cedula: number) {
         const prof: ProfesorEntity = await this.profRepository.findOne({ where: { cedula } });
         if (!prof) {
-            throw new BusinessLogicException("The profosal with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The profesor with the given id was not found", BusinessError.NOT_FOUND);
         }
 
         for (var prop of prof.propuestas) {

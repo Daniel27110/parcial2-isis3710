@@ -1,12 +1,17 @@
-import { IsNotEmpty, IsString, IsUrl } from "class-validator";
+import { IsNotEmpty, IsString } from "class-validator";
 
-export class PropuestaDTO {
+export class PropuestaDto {
 
     @IsString()
     @IsNotEmpty()
-    readonly nombre: string;
+    readonly titulo: string;
 
-    @IsUrl()
+    @IsString()
     @IsNotEmpty()
-    readonly url: string;
+    readonly descripcion: string;
+
+    @IsString()
+    @IsNotEmpty()
+    readonly palabraClave: string;
+
 }
